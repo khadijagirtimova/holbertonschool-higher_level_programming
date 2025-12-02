@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-displays the value of the X-Request-Id variable found in the header of the response
+Python script that fetches a URL and displays
+
 """
 
 import urllib.request
@@ -10,4 +11,5 @@ url = sys.argv[1]
 
 with urllib.request.urlopen(url) as response:
     x_request_id = response.getheader("X-Request-Id")
-    print(x_request_id)
+    if x_request_id:
+        print(x_request_id)
